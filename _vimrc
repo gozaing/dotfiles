@@ -11,29 +11,6 @@ au BufWrite /private/tmp/crontab.* set nowritebackup nobackup
 " Don't write backup file if vim is being called by "chpass"
 au BufWrite /private/etc/pw.* set nowritebackup nobackup
 
-" color
-"colorscheme molokai
-"syntax on
-"let g:molokai_original = 1
-"let g:rehash256 = 1
-"set background=dark
-"set t_Co=256
-"set number
-
-"colorscheme jellybeans
-"if &term =~ "xterm-256color" || "screen-256color"
-"    set t_Co=256
-"    set t_Sf=[3%dm
-"    set t_Sb=[4%dm
-"elseif &term =~ "xterm-color"
-"    set t_Co=8
-"    set t_Sf=[3%dm
-"    set t_Sb=[4%dm
-"endif
-
-"syntax enable
-"hi PmenuSel cterm=reverse ctermfg=33 ctermbg=222 gui=reverse guifg=#3399ff guibg=#f0e68c
-
 
 " tab
 set tabstop=4
@@ -41,7 +18,7 @@ set autoindent
 set expandtab
 set shiftwidth=4
 
-set nocompatible
+" NeoBundle setting
 filetype off
  
 if has('vim_starting')
@@ -51,8 +28,6 @@ call neobundle#begin(expand('~/.vim/bundle'))
 
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-call neobundle#end()
-         
 " ここから NeoBundle でプラグインを設定します
   
 " NeoBundle で管理するプラグインを追加します。
@@ -60,7 +35,8 @@ NeoBundle 'Shougo/neocomplcache.git'
 NeoBundle 'Shougo/unite.vim.git'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'plasticboy/vim-markdown'
-NeoBundle 'kannnokanno/previm'
+NeoBundle 'kannokanno/previm.git'
+NeoBundle 'tyru/open-browser.vim'
 
 " color
 NeoBundle 'vim-scripts/moria'
@@ -79,7 +55,12 @@ NeoBundle 'tomasr/molokai'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'ujihisa/unite-colorscheme'
 
+" Tree
+NeoBundle 'scrooloose/nerdtree'
+
+call neobundle#end()
 filetype plugin indent on       " restore filetype
+NeoBundleCheck
 
 " color
 colorscheme jellybeans
@@ -89,3 +70,18 @@ let g:rehash256 = 1
 set background=dark
 set t_Co=256
 set number
+
+" ##############################
+" MarkDown
+" ##############################
+"PreVim
+augroup PrevimSettings
+ autocmd!
+ autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
+augroup END"
+"let g:previm_open_cmd = 'open -a Safari'
+nnoremap [previm] <Nop>
+nmap <Space>p [previm]
+nnoremap <silent> [previm]o :<C-u>PrevimOpen<CR>
+nnoremap <silent> [previm]r :call previm#refresh()<CR>
+"  ##############################
