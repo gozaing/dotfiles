@@ -58,6 +58,10 @@ NeoBundle 'ujihisa/unite-colorscheme'
 " Tree
 NeoBundle 'scrooloose/nerdtree'
 
+" Scala
+NeoBundle 'derekwyatt/vim-scala'
+
+
 call neobundle#end()
 filetype plugin indent on       " restore filetype
 NeoBundleCheck
