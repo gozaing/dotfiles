@@ -86,6 +86,7 @@ set hlsearch " 検索結果をハイライト
 set noswapfile " swap ファイルを作成しない
 set nobackup " backup ファイルを作らない
 set noundofile " undo をセッションを越えて行わない
+set clipboard=unnamed,autoselect " Mac側とClipboard と共有する
 
 " ESCキー2度押しでハイライトの切り替え
 nnoremap <silent><Esc><Esc> :<C-u>set nohlsearch!<CR>
