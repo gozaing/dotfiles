@@ -6,7 +6,7 @@ call plug#begin('~/.vim/plugged')
 " Make sure you use single quotes
 " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
 Plug 'junegunn/vim-easy-align'
-" Any valid git URL is allowed Plug 'https://github.com/junegunn/vim-github-dashboard.git' 
+" Any valid git URL is allowed Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 " Multiple Plug commands can be written in a single line using | separators
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 
@@ -54,6 +54,10 @@ Plug 'tacahiroy/ctrlp-funky'
 " CtrlPの拡張プラグイン. コマンド履歴検索
 Plug 'suy/vim-ctrlp-commandline'
 
+" fzf
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+
 
 call plug#end()
 " ====================================
@@ -86,7 +90,7 @@ set hlsearch " 検索結果をハイライト
 set noswapfile " swap ファイルを作成しない
 set nobackup " backup ファイルを作らない
 set noundofile " undo をセッションを越えて行わない
-set clipboard=unnamed,autoselect " Mac側とClipboard と共有する
+set clipboard=unnamed,autoselect " clipboard 有効
 
 " ESCキー2度押しでハイライトの切り替え
 nnoremap <silent><Esc><Esc> :<C-u>set nohlsearch!<CR>
@@ -186,4 +190,4 @@ let g:ctrlp_extensions = ['funky', 'commandline'] " CtrlPの拡張として「fu
 command! CtrlPCommandLine call ctrlp#init(ctrlp#commandline#id())
 
 " CtrlPFunkyの有効化
-let g:ctrlp_funky_matchtype = 'path' 
+let g:ctrlp_funky_matchtype = 'path'
