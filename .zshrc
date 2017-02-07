@@ -148,3 +148,4 @@ export ORACLE_HOME=/Users/tobaru-hideyasu/workspace
 export SQLPATH=$ORACLE_HOME/instantclient_12_1
 export PATH="$PATH:$SQLPATH"
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
