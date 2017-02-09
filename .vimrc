@@ -189,5 +189,17 @@ let g:ctrlp_extensions = ['funky', 'commandline'] " CtrlPの拡張として「fu
 " CtrlPCommandLineの有効化
 command! CtrlPCommandLine call ctrlp#init(ctrlp#commandline#id())
 
+" -------------------------
+"  fzf
+" -------------------------
+let g:fzf_action = {
+      \ 'ctrl-s': 'split',
+      \ 'ctrl-v': 'vsplit'
+      \ }
+nnoremap <c-p> :FZF<cr>
+nnoremap <c-t> :History<cr>
+
 " CtrlPFunkyの有効化
 let g:ctrlp_funky_matchtype = 'path'
+
+" inoremap <ESC> <ESC>:set iminsert=0<CR>  " ESCでIMEを確実にOFF
