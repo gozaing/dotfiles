@@ -174,6 +174,9 @@ bindkey '^t' peco-cdr
 ## emacs
 ##alias e='emacs'
 
+## Git
+alias g='git'
+
 ## Docker
 alias dk='docker'
 alias dc='docker-compose'
