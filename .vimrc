@@ -31,7 +31,11 @@ Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 
 " Initialize plugin system
 " カラースキームmolokai
-Plug 'tomasr/molokai'
+"Plug 'tomasr/molokai'
+
+" solarized
+Plug 'altercation/vim-colors-solarized'
+
 " ステータスラインの表示内容強化
 Plug 'itchyny/lightline.vim'
 
@@ -148,12 +152,23 @@ endif
 " molokaiの設定
 "----------------------------------------------------------
 " if neobundle#is_installed('molokai') " molokaiがインストールされていれば
-colorscheme molokai " カラースキームにmolokaiを設定する
+"
+"colorscheme molokai " カラースキームにmolokaiを設定する
+"
 " endif
 
 "set t_Co=256 " iTerm2など既に256色環境なら無くても良い
-syntax enable " 構文に色を付ける
 
+"syntax enable " 構文に色を付ける
+
+"----------------------------------------------------------
+" color setting solarizedの設定
+"----------------------------------------------------------
+syntax enable
+set background=dark
+colorscheme solarized
+"let g:solarized_termcolors=256
+"g:solarized_termtrans=1
 "----------------------------------------------------------
 " ステータスラインの設定
 "----------------------------------------------------------
