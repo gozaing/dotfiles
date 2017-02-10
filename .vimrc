@@ -206,3 +206,7 @@ nnoremap <c-t> :History<cr>
 let g:ctrlp_funky_matchtype = 'path'
 
 " inoremap <ESC> <ESC>:set iminsert=0<CR>  " ESCでIMEを確実にOFF
+" -------------------------
+"  vim-markdown setting
+" -------------------------
+let g:vim_markdown_folding_disabled = 1
