@@ -89,6 +89,13 @@ set softtabstop=4 " 連続した空白に対してタブキーやバックスペ
 set autoindent " 改行時に前の行のインデントを継続する
 set smartindent " 改行時に前の行の構文をチェックし次の行のインデントを増減する
 set shiftwidth=4 " smartindentで増減する幅
+" 言語毎に切り替え 今後増えたら.vim/に移動
+augroup fileTypeIndent
+    autocmd!
+    autocmd BufNewFile,BufRead *.php setlocal tabstop=4 softtabstop=4 shiftwidth=4
+    autocmd BufNewFile,BufRead *.rb  setlocal tabstop=2 softtabstop=2 shiftwidth=2
+    autocmd BufNewFile,BufRead *.md  setlocal tabstop=2 softtabstop=2 shiftwidth=2
+augroup END
 
 set incsearch " インクリメンタルサーチ. １文字入力毎に検索を行う
 set ignorecase " 検索パターンに大文字小文字を区別しない
