@@ -221,8 +221,9 @@ let g:fzf_action = {
       \ 'ctrl-s': 'split',
       \ 'ctrl-v': 'vsplit'
       \ }
-nnoremap <c-p> :FZF<cr>
-nnoremap <c-t> :History<cr>
+" ctags conflict
+"nnoremap <c-p> :FZF<cr>
+"nnoremap <c-t> :History<cr>
 
 " CtrlPFunkyの有効化
 let g:ctrlp_funky_matchtype = 'path'
