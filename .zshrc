@@ -192,4 +192,10 @@ export ORACLE_HOME=/Users/tobaru-hideyasu/workspace
 export SQLPATH=$ORACLE_HOME/instantclient_12_1
 export PATH="$PATH:$SQLPATH"
 
+## rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+
+
 
