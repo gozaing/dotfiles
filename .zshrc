@@ -196,6 +196,6 @@ export PATH="$PATH:$SQLPATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
-
-
-
+PYENV_PATH="$HOME/.pyenv"
+export PATH="$PYENV_PATH/bin:$PATH"
+eval "$(pyenv init -)"
