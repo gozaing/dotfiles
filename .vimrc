@@ -67,6 +67,10 @@ Plug 'suy/vim-ctrlp-commandline'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 
+" markdown preview
+" chrome preview open cmd => :PrevimOpen
+Plug 'kannokanno/previm'
+
 call plug#end()
 " ====================================
 " default setting
