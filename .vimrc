@@ -103,6 +103,12 @@ augroup fileTypeIndent
     autocmd BufNewFile,BufRead *.py  setlocal tabstop=4 softtabstop=4 shiftwidth=4
 augroup END
 
+" Markdown と判定する拡張子
+augroup PrevimSettings
+    autocmd!
+    autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
+augroup END
+
 set incsearch " インクリメンタルサーチ. １文字入力毎に検索を行う
 set ignorecase " 検索パターンに大文字小文字を区別しない
 set smartcase " 検索パターンに大文字を含んでいたら大文字小文字を区別する
@@ -208,6 +214,15 @@ inoremap <expr><BS> neocomplete#smart_close_popup()."<C-h>"
 imap <expr><CR> neosnippet#expandable() ? "<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "<C-y>" : "<CR>"
 " タブキーで補完候補の選択. スニペット内のジャンプもタブキーでジャンプ・・・・・・③
 imap <expr><TAB> pumvisible() ? "<C-n>" : neosnippet#jumpable() ? "<Plug>(neosnippet_expand_or_jump)" : "<TAB>"
+
+"----------------------------------------------------------
+" Previmの設定
+"----------------------------------------------------------
+let g:previm_open_cmd = 'open -a "/Applications/Google Chrome.app"'
+nnoremap [previm] <Nop>
+nmap <Space>p [previm]
+nnoremap <silent> [previm]o :<C-u>PrevimOpen<CR>
+nnoremap <silent> [previm]r :call previm#refresh()<CR>
 
 "----------------------------------------------------------
 " CtrlPの設定
